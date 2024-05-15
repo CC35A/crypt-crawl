@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="65523c09-4bb3-4a10-9b2a-e711d7a5e848" name="Changes" comment="" />
+    <list default="true" id="65523c09-4bb3-4a10-9b2a-e711d7a5e848" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/src/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Chunk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChunkLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/1-N-T-WallBack1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/10-W-T-DungeonFloorCracked1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/11-W-T-DungeonFloorCracked2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/12-W-T-DungeonFloorCracked3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/13-N-T-BrownChest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/16-N-T-BedLower.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/17-N-T-BedUpper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/18-N-T-Grabstein.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/19-N-T-Stones.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/2-N-T-WallBottomLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/20-W-T-Gras.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/3-N-T-WallBottomRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/4-N-T-WallFront1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/5-N-T-WallSides.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/6-N-T-WallTop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/7-N-T-WallTopLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/8-N-T-Well.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/DungeonFloorClean.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/textures/RedChest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vector/Vector2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,15 +63,31 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MainWindow.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "D:/dev/java-schule/crypt-crawl/src/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="MainWindow" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainWindow" />
+      <module name="crypt-crawl" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -38,22 +96,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715788886059</updated>
-      <workItem from="1715788887217" duration="3000" />
+      <workItem from="1715788887217" duration="15032000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1715788973560</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715788973560</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
