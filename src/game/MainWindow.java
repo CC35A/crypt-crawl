@@ -1,4 +1,4 @@
-import vector.Vector2;
+package game;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;

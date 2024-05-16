@@ -1,3 +1,5 @@
+package game;
+
 import vector.Vector2;
 
 import java.io.BufferedReader;
@@ -45,7 +47,7 @@ public class ChunkLoader{
                 double distance = camChunkPos.subtract(chunkPosition).magnitude();
                 if (distance <= Config.SIMULATION_DISTANCE) {
                     if (!loadedChunks.containsKey(chunkPosition.hashCode())) {
-                        System.out.println("Loading chunk" + chunkPosition + " at distance " + distance);
+                        //System.out.println("Loading chunk" + chunkPosition + " at distance " + distance);
                         loadChunk(chunkPosition);
                         hasLoadedChunks = true;
                     }
@@ -60,7 +62,7 @@ public class ChunkLoader{
             if(Config.SIMULATION_DISTANCE < distance) {
                 if (loadedChunks.containsKey(chunkPosition.hashCode())) {
                     iterator.remove();
-                    System.out.println("Unloading chunk " + chunkPosition + " at distance " + distance);
+                    //System.out.println("Unloading chunk " + chunkPosition + " at distance " + distance);
                     loadedChunks.remove(chunkPosition.hashCode());
                     chunks.removeIf(c -> c.pos.equals(chunkPosition));
                 }
@@ -80,7 +82,7 @@ public class ChunkLoader{
 
         File file = new File(filePath);
         if (!file.exists()) {
-            System.out.println("File does not exist " + filePath);
+            //System.out.println("File does not exist " + filePath);
             filePath = chunkPath + world + "/default.dat";
         }
 

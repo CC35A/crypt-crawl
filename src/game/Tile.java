@@ -1,3 +1,5 @@
+package game;
+
 import vector.Vector2;
 
 import javax.imageio.ImageIO;

@@ -1,10 +1,10 @@
+package game;
+
 import vector.Vector2;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 
 public class GamePanel extends JPanel {
     private Game game;
@@ -44,6 +44,7 @@ public class GamePanel extends JPanel {
         ArrayList<Vector2> loadedChunkPositions = new ArrayList<>(game.chunkLoader.loadedChunks.values());
         for (Vector2 lpos : loadedChunkPositions) {
             //System.out.println(lpos);
+            if(lpos == null) continue;
             if (camera.chunkPos.subtract(lpos).magnitude() > Config.RENDER_DISTANCE) continue;
             for (int x = 0; x < Config.CHUNK_SIZE; x++) {
                 for (int y = 0; y < Config.CHUNK_SIZE; y++) {
@@ -66,7 +67,7 @@ public class GamePanel extends JPanel {
         g2d.setColor(Color.GREEN);
         int playerX = (this.getWidth() - Config.TILE_SIZE) / 2;
         int playerY = (this.getHeight() - Config.TILE_SIZE) / 2;
-        g2d.drawRect(playerX, playerY, Config.TILE_SIZE, Config.TILE_SIZE);
+        g2d.drawImage(game.player.img, playerX, playerY, null);
 
         g2d.setColor(Color.BLACK);
         g2d.drawString("FPS: " + (int) (1 / game.deltaTime), 50, 50);

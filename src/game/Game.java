@@ -1,3 +1,5 @@
+package game;
+
 import vector.Vector2;
 
 import java.awt.event.KeyEvent;
@@ -11,13 +13,17 @@ public class Game {
     private List<Tile> tilesEnv = new ArrayList<Tile>() {};
     private List<Tile> tilesFor = new ArrayList<Tile>() {};
     private Map<Integer, Vector2> keyDirections; // Map key codes to movement directions
-    private Vector2 currentMovement;
+    public Vector2 currentMovement; // TODO make private
     private Set<Integer> currentKeys = new HashSet<>();
 
     public ChunkLoader chunkLoader; // TODO set private
+    public final Player player;
     private long lastUpdateTime;
+    public ArrayList<GameObject> gameObjects = new ArrayList<>();
 
     public Game() {
+        this.player = new Player(new Vector2(0, 0), this);
+        this.gameObjects.add(this.player);
         this.camera = new Camera(new Vector2(0, 0));
         initializeKeyDirections();
         this.currentMovement = new Vector2(0, 0);
@@ -32,15 +38,20 @@ public class Game {
         deltaTime = (currentTime - lastUpdateTime) / 1e9; // Convert nanoseconds to seconds
         if(deltaTime > longestDeltaTime) longestDeltaTime = deltaTime;
         lastUpdateTime = currentTime;
+        //updateCameraPosition(deltaTime);
+        updateWorldMap();
 
-        updateCameraPosition(deltaTime);
-
+        for (GameObject obj : gameObjects) {
+            obj.update(deltaTime);
+        }
     }
 
     public void updateWorldMap() {
         if(!chunkLoader.hasLoadedChunks) return;
+        System.out.println("updating map"); // TODO optimize, to make less calls
         List<Tile> tmpEnv = new ArrayList<Tile>() {};
-        for (Chunk chunk : chunkLoader.chunks) {
+        ArrayList<Chunk> tmpChunks = new ArrayList<>(chunkLoader.chunks);
+        for (Chunk chunk : tmpChunks) {
             tmpEnv.addAll(chunk.mapEnv);
         }
         this.tilesEnv = tmpEnv;

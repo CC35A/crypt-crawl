@@ -1,8 +1,8 @@
+package game;
+
 import vector.Vector2;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Chunk {
     public final Vector2 pos;
