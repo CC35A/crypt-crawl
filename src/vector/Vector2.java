@@ -71,9 +71,15 @@ public class Vector2 {
     }
 
     public Vector2 round(){
-        this.x = (int) this.x;
-        this.y = (int) this.y;
-        return new Vector2(this.x, this.y);
+        //this.x = (int) this.x;
+        //this.y = (int) this.y;
+        return new Vector2((int) this.x, (int) this.y);
+    }
+
+    public Vector2 floor() {
+        int newX = (int) Math.floor(this.x);
+        int newY = (int) Math.floor(this.y);
+        return new Vector2(newX, newY);
     }
 
     @Override
@@ -89,6 +95,7 @@ public class Vector2 {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        String tmpString = x + "" + y;
+        return tmpString.hashCode();
     }
 }

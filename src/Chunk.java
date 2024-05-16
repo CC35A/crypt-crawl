@@ -10,11 +10,11 @@ public class Chunk {
     private final String world;
     public Tile[][][] map = new Tile[16][16][2];
 
-    public Chunk(int x, int y, Game game, String world) {
-        this.pos = new Vector2(x, y);
+    public Chunk(Vector2 pos, Tile[][][] map, Game game, String world) {
+        this.pos = pos;
         this.world = world;
         this.game = game;
-        readChunk(x + "-" + y);
+        this.map = map;
     }
 
     private Chunk readChunk(String chunkID) {

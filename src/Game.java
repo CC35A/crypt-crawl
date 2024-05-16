@@ -5,13 +5,17 @@ import java.util.*;
 
 public class Game {
     public Camera camera;
+
+    public double deltaTime;
+    public double longestDeltaTime;
     private List<Tile> tilesEnv = new ArrayList<Tile>() {};
     private List<Tile> tilesFor = new ArrayList<Tile>() {};
     private Map<Integer, Vector2> keyDirections; // Map key codes to movement directions
     private Vector2 currentMovement;
     private Set<Integer> currentKeys = new HashSet<>();
 
-    private ChunkLoader chunkLoader;
+    public ChunkLoader chunkLoader; // TODO set private
+    private long lastUpdateTime;
 
     public Game() {
         genererateWorldMap();
@@ -19,17 +23,24 @@ public class Game {
         initializeKeyDirections();
         this.currentMovement = new Vector2(0, 0);
         this.chunkLoader = new ChunkLoader(this.camera);
+        this.lastUpdateTime = System.nanoTime(); // Initialize the last update time
     }
 
     public void update(){
-        updateCameraPosition();
-        chunkLoader.update();
+        long currentTime = System.nanoTime();
+        deltaTime = (currentTime - lastUpdateTime) / 1e9; // Convert nanoseconds to seconds
+        if(deltaTime > longestDeltaTime) longestDeltaTime = deltaTime;
+        lastUpdateTime = currentTime;
+
+        updateCameraPosition(deltaTime);
+        //chunkLoader.update();
     }
 
     private void genererateWorldMap(){
-        this.tilesEnv.add(new Tile(new Vector2(1, 1), 0));
-        this.tilesEnv.add(new Tile(new Vector2(0, 1), 0));
         this.tilesEnv.add(new Tile(new Vector2(0, 0), 0));
+        this.tilesEnv.add(new Tile(new Vector2(0, 15), 0));
+        this.tilesEnv.add(new Tile(new Vector2(15, 0), 0));
+        this.tilesEnv.add(new Tile(new Vector2(15, 15), 0));
 
         this.tilesFor.add(new Tile(new Vector2(1, 1), 1));
     }
@@ -75,7 +86,7 @@ public class Game {
     }
 
     // Update camera position based on current movement
-    private void updateCameraPosition() {
-        camera.move(currentMovement.normalize().scale(Config.SPEED));
+    private void updateCameraPosition(double deltaTime) {
+        camera.move(currentMovement.normalize().scale(Config.SPEED * deltaTime));
     }
 }

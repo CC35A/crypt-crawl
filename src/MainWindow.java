@@ -8,8 +8,9 @@ public class MainWindow extends JFrame{
     private Game game;
     private GamePanel gamePanel;
     private Timer timer;
+
     public MainWindow(){
-        setTitle("Cryptcrawl");
+        setTitle(Config.GAME_TITLE);
         setSize(1600, 900);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -18,11 +19,16 @@ public class MainWindow extends JFrame{
         gamePanel = new GamePanel(game);
         add(gamePanel);
 
-        timer = new Timer(16, e -> {
-           game.update();
-           gamePanel.repaint();
+        timer = new Timer(10, e -> {
+            game.update();
+            gamePanel.repaint();
         });
         timer.start();
+
+        Timer chunkTimer = new Timer(10, f -> {
+           game.chunkLoader.update();
+        });
+        chunkTimer.start();
 
         gamePanel.setFocusable(true);
         gamePanel.requestFocusInWindow();
