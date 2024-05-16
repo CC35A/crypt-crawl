@@ -3,6 +3,8 @@ import vector.Vector2;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class GamePanel extends JPanel {
     private Game game;
@@ -38,8 +40,11 @@ public class GamePanel extends JPanel {
         }
 
         // Draw loaded chunks
-        for (Vector2 lpos : game.chunkLoader.loadedChunks.values()) {
+        g2d.setColor(Color.GRAY);
+        ArrayList<Vector2> loadedChunkPositions = new ArrayList<>(game.chunkLoader.loadedChunks.values());
+        for (Vector2 lpos : loadedChunkPositions) {
             //System.out.println(lpos);
+            if (camera.chunkPos.subtract(lpos).magnitude() > Config.RENDER_DISTANCE) continue;
             for (int x = 0; x < Config.CHUNK_SIZE; x++) {
                 for (int y = 0; y < Config.CHUNK_SIZE; y++) {
                     Vector2 drawPosition = new Vector2(x, y).add(lpos.scale(Config.CHUNK_SIZE)).scale(Config.TILE_SIZE);
@@ -47,6 +52,7 @@ public class GamePanel extends JPanel {
                 }
             }
         }
+
 
         // Draw the camera position marker
         g2d.setColor(Color.RED);

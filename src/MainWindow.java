@@ -25,10 +25,7 @@ public class MainWindow extends JFrame{
         });
         timer.start();
 
-        Timer chunkTimer = new Timer(10, f -> {
-           game.chunkLoader.update();
-        });
-        chunkTimer.start();
+
 
         gamePanel.setFocusable(true);
         gamePanel.requestFocusInWindow();

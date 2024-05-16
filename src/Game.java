@@ -18,12 +18,13 @@ public class Game {
     private long lastUpdateTime;
 
     public Game() {
-        genererateWorldMap();
         this.camera = new Camera(new Vector2(0, 0));
         initializeKeyDirections();
         this.currentMovement = new Vector2(0, 0);
-        this.chunkLoader = new ChunkLoader(this.camera);
+        this.chunkLoader = new ChunkLoader(this.camera, this);
         this.lastUpdateTime = System.nanoTime(); // Initialize the last update time
+        //HeapDump.dumpHeap("heapdump.hprof", true); // TODO for testing, remove in prod
+        updateWorldMap();
     }
 
     public void update(){
@@ -33,16 +34,16 @@ public class Game {
         lastUpdateTime = currentTime;
 
         updateCameraPosition(deltaTime);
-        //chunkLoader.update();
+
     }
 
-    private void genererateWorldMap(){
-        this.tilesEnv.add(new Tile(new Vector2(0, 0), 0));
-        this.tilesEnv.add(new Tile(new Vector2(0, 15), 0));
-        this.tilesEnv.add(new Tile(new Vector2(15, 0), 0));
-        this.tilesEnv.add(new Tile(new Vector2(15, 15), 0));
-
-        this.tilesFor.add(new Tile(new Vector2(1, 1), 1));
+    public void updateWorldMap() {
+        if(!chunkLoader.hasLoadedChunks) return;
+        List<Tile> tmpEnv = new ArrayList<Tile>() {};
+        for (Chunk chunk : chunkLoader.chunks) {
+            tmpEnv.addAll(chunk.mapEnv);
+        }
+        this.tilesEnv = tmpEnv;
     }
 
     public List<Tile> getTilesEnv() {

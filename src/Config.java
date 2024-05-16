@@ -5,7 +5,8 @@ public class Config {
     public static final String GAME_TITLE = "Cryptcrawl";
     public static final double SPEED = 7;
     public static final int CHUNK_SIZE = 16;
-    public static final int SIMULATION_DISTANCE = 5;
+    public static final int SIMULATION_DISTANCE = 2;
+    public static final int RENDER_DISTANCE = 2;
     public static final int X_OFFSET = 40; // Calculated for specific resolution
     public static final int Y_OFFSET = 50; // Calculated for specific resolution
 
