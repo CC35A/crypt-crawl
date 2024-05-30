@@ -14,13 +14,15 @@ public class Player extends GameObject{
         super(pos);
         this.game = game;
         this.anim = new Animation("./src/images/Player.png", this, 16, 4, 1, 15);
+        this.collider = new Collider();
+        this.collider.octagon(0.8);
     }
 
     @Override
     protected void update(double deltaTime) {
         move(game.currentMovement.normalize().scale(Config.SPEED * deltaTime));
-        game.camera.pos = this.pos;
-        game.camera.move(new Vector2(0, 0));
+        game.camera.pos = this.pos; // TODO fix player/camera position juggling
+        game.camera.move(new Vector2(0, 0)); // called to calculate new chunk position
     }
 
     public void move(Vector2 offset) {

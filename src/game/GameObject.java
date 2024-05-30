@@ -11,6 +11,7 @@ public class GameObject {
     public BufferedImage img;
     public Vector2 pos;
     public Vector2 chunkPos;
+    public Collider collider;
 
 
     public GameObject(Vector2 pos){

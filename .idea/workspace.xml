@@ -4,25 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65523c09-4bb3-4a10-9b2a-e711d7a5e848" name="Changes" comment="bette chunkloading">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/animator/Animation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/animator/ImageUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/animator/Text.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/animator/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Player.png" afterDir="false" />
+    <list default="true" id="65523c09-4bb3-4a10-9b2a-e711d7a5e848" name="Changes" comment="animation handling">
+      <change afterPath="$PROJECT_DIR$/src/game/Collider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Chunk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChunkLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ChunkLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HeapDump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/HeapDump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +81,11 @@
       <updated>1715788886059</updated>
       <workItem from="1715788887217" duration="15085000" />
       <workItem from="1715858782017" duration="18199000" />
+      <workItem from="1715988116597" duration="57000" />
+      <workItem from="1715989805913" duration="602000" />
+      <workItem from="1716043325327" duration="54000" />
+      <workItem from="1716062397443" duration="278000" />
+      <workItem from="1717071166568" duration="7190000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -118,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715890458309</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="animation handling">
+      <option name="closed" value="true" />
+      <created>1715894244390</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715894244390</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +140,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="simple render" />
     <MESSAGE value="bette chunkloading" />
-    <option name="LAST_COMMIT_MESSAGE" value="bette chunkloading" />
+    <MESSAGE value="animation handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="animation handling" />
   </component>
 </project>

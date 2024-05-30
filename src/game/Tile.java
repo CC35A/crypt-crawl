@@ -12,7 +12,11 @@ public class Tile extends GameObject{
         super(pos);
         String imageName = null;
         if(id == 0) imageName = "DungeonFloorClean.png";
-        if(id == 1) imageName = "RedChest.png";
+        if(id == 1) {
+            imageName = "RedChest.png";
+            this.collider = new Collider();
+            this.collider.square(1);
+        }
         if(imageName == null) return;
         try {
             this.img = ImageIO.read(new File(path + imageName));
