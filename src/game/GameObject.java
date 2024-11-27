@@ -21,4 +21,8 @@ public class GameObject {
     protected void update(double deltaTime){
 
     }
+
+    protected void onCollision(GameObject other, Vector2 mtv) {
+        System.out.println("Collided!");
+    }
 }

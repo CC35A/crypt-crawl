@@ -44,6 +44,60 @@ public class Game {
         for (GameObject obj : gameObjects) {
             obj.update(deltaTime);
         }
+
+        handleCollision();
+    }
+
+    public boolean checkForCollision(GameObject actor) {
+        List<GameObject> sourceObjects = new ArrayList<>(gameObjects);
+        sourceObjects.addAll(tilesEnv);
+        sourceObjects.addAll(tilesFor);
+        sourceObjects.removeIf(obj -> obj.collider == null);
+
+        for (GameObject other : sourceObjects) {
+            if (actor == other || actor.collider == null || other.collider == null) continue;
+            Vector2 mtv = CollisionDetection.checkCollision(actor, other);
+            System.out.println(mtv);
+            if(mtv != null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void handleCollision() {
+        List<List<GameObject>> combinations = getAllCombinations(gameObjects);
+        for (List<GameObject> objs : combinations) {
+            GameObject actor = objs.get(0);
+            GameObject other = objs.get(1);
+            if (actor == other || actor.collider == null || other.collider == null) continue;
+            Vector2 mtv = CollisionDetection.checkCollision(actor, other);
+            if (mtv != null) {
+                actor.onCollision(other, mtv);
+                other.onCollision(actor, mtv);
+            }
+        }
+    }
+
+    private List<List<GameObject>> getAllCombinations(List<GameObject> gameObjects) {
+        List<List<GameObject>> combinations = new ArrayList<>();
+        List<GameObject> sourceObjects = new ArrayList<>(gameObjects);
+        sourceObjects.addAll(tilesEnv);
+        sourceObjects.addAll(tilesFor);
+        sourceObjects.removeIf(obj -> obj.collider == null);
+
+        // Iterate through each pair of GameObjects
+        for (int i = 0; i < sourceObjects.size(); i++) {
+            for (int j = i + 1; j < sourceObjects.size(); j++) {
+                List<GameObject> pair = new ArrayList<>();
+                pair.add(sourceObjects.get(i));
+                pair.add(sourceObjects.get(j));
+                if (pair.get(0).pos.subtract(pair.get(1).pos).magnitude() > 4) continue; // TODO to properly
+                combinations.add(pair);
+            }
+        }
+
+        return combinations;
     }
 
     public void updateWorldMap() {

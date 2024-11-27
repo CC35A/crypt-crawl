@@ -29,6 +29,10 @@ public class Player extends GameObject{
         anim.update();
         this.pos.x += offset.x;
         this.pos.y += offset.y;
+        if(game.checkForCollision(this)) {
+            this.pos.x -= offset.x;
+            this.pos.y -= offset.y;
+        }
 
 
         if(this.pos.x < 0) this.pos.x = 0;
